@@ -1,0 +1,23 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shroomui-deployment
+  labels:
+    app: shroom-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shroom-frontend
+  template:
+    metadata:
+      labels:
+        app: shroom-frontend
+    spec:
+      containers: 
+      - name: shroom-ui
+        image: tombriggs/shroom-ui:main
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3000
