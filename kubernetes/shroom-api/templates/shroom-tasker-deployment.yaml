@@ -1,0 +1,23 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shroom-tasker
+  labels:
+    app: shroom-tasker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shroom-tasker
+    template:
+      metadata:
+        labels:
+          app: shroom-tasker
+      spec:
+        containers:
+          - name: shroom-api
+            image: tombriggs/shroom-api:main
+            ports:
+            - containerPort: {{ .Values.shroomtasker.port }}
+

@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: service
+metadata:
+  name: shroom-tasker-service
+spec:
+  selector:
+    app: shroom-tasker
+  type: NodePort
+  ports:
+  - protocol: TCP
+    port: {{ .Values.shroomtasker.port }}
+    targetPort: {{ .Values.shroomtasker.port }}
+    nodePort: 30030
