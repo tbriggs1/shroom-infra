@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: shroomui-deployment
+  name: {{ template "shroomui.name" . }}-deployment
   labels:
     app: shroom-frontend
 spec:
