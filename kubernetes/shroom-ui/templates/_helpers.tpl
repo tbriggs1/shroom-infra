@@ -8,7 +8,7 @@ Unique name of the shroom UI Chart
 {{/* 
 Selector labels
 */}}
-{{- define "shroomui.selectorLabels" -}}
-app.kubernetes.io/name: {{ include shroomui.name .}}
-app.kubernetes.io/instance: {{ .Release.Name }}
-{{- end }}
+# {{- define "shroomui.selectorLabels" -}}
+# app.kubernetes.io/name: {{ include shroomui.name .}}
+# app.kubernetes.io/instance: {{ .Release.Name }}
+# {{- end }}
